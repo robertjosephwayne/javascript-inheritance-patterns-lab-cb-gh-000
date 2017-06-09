@@ -41,3 +41,25 @@ Circle.prototype.area = function() {
 Circle.prototype.circumference = function() {
   return 2 * Math.PI * this.radius;
 };
+
+function Polygon(sides) {
+  Shape.call(this);
+  this.sides = sides;
+}
+
+Polygon.prototype = Object.create(Shape.prototype);
+Polygon.prototype.constructor = Polygon;
+
+Polygon.prototype.perimeter = function() {
+  let totalPerimeter = 0;
+
+  this.sides.forEach((side) => {
+    totalPerimeter += side.length;
+  });
+
+  return totalPerimeter;
+};
+
+Polygon.prototype.numberOfSides = function() {
+  return this.sides.length;
+};
