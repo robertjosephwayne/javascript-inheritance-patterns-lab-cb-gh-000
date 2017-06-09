@@ -8,15 +8,21 @@ Point.prototype.toString = function() {
 };
 
 function Shape() {
-  this.addToPlane = function(x, y) {
-    this.position = Point.create(x, y);
-  };
-
-  this.move = function(x, y) {
-    this.position = Point.create(x, y);
-  };
 }
+
+Shape.prototype.addToPlane = function(x, y) {
+  this.position = new Point(x, y);
+};
+
+Shape.prototype.move = function(x, y) {
+  this.position = new Point(x, y);
+};
 
 function Side(length) {
   this.length = length;
 }
+
+function Circle(radius) {
+  this.radius = radius;
+}
+
