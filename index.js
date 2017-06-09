@@ -99,3 +99,24 @@ Rectangle.prototype.constructor = Rectangle;
 Rectangle.prototype.area = function() {
   return this.width * this.height;
 };
+
+function Square(length) {
+  Rectangle.call(this, length, length);
+  this.length = length;
+}
+
+Square.prototype = Object.create(Rectangle.prototype);
+Square.prototype.constructor = Square;
+
+Square.prototype.listProperties = function () {
+  let properties = [];
+
+  for (const prop in this) {
+    if (this.hasOwnProperty(prop)) {
+      console.log(prop);
+      properties.push(prop);
+    }
+  }
+
+  return properties.toString();
+};
