@@ -16,3 +16,7 @@ function Shape() {
     this.position = Point.create(x, y);
   };
 }
+
+function Side(length) {
+  this.length = length;
+}
